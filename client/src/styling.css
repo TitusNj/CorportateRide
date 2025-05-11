@@ -1,0 +1,657 @@
+/* Global Styles */
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --light-color: #ecf0f1;
+  --dark-color: #2c3e50;
+  --success-color: #2ecc71;
+  --warning-color: #f39c12;
+  --danger-color: #e74c3c;
+  --info-color: #3498db;
+  --border-radius: 4px;
+  --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--dark-color);
+  background-color: #f5f7fa;
+}
+
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* App Container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand a {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbar-item {
+  color: white;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.navbar-item:hover {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-name {
+  color: white;
+}
+
+.logout-button {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.logout-button:hover {
+  background-color: white;
+  color: var(--primary-color);
+}
+
+/* Auth Forms */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+  padding: 2rem;
+}
+
+.auth-card {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.company-register {
+  max-width: 700px;
+}
+
+.auth-card h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.auth-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+/* Form Elements */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+label {
+  font-weight: 500;
+  color: var(--dark-color);
+}
+
+input,
+select,
+textarea {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.submit-button {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.submit-button:hover {
+  background-color: #2980b9;
+}
+
+.submit-button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+.action-button {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.action-button:hover {
+  background-color: #2980b9;
+}
+
+.action-button.small {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
+
+.cancel-button {
+  background-color: #95a5a6;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.cancel-button:hover {
+  background-color: #7f8c8d;
+}
+
+.cancel-button.small {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
+
+.delete-button {
+  background-color: var(--danger-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.delete-button:hover {
+  background-color: #c0392b;
+}
+
+.delete-button.small {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
+
+/* Messages */
+.error-message {
+  background-color: #fadbd8;
+  color: var(--danger-color);
+  padding: 0.75rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+}
+
+.success-message {
+  background-color: #d5f5e3;
+  color: var(--success-color);
+  padding: 0.75rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  font-size: 1.25rem;
+  color: var(--secondary-color);
+}
+
+/* Dashboard */
+.dashboard-container {
+  padding: 1.5rem;
+}
+
+.dashboard-container h1 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.dashboard-actions {
+  margin: 1.5rem 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.dashboard-section {
+  margin-bottom: 2rem;
+}
+
+.dashboard-section h2 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+/* Trip Cards */
+.trips-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.trip-card {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.trip-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.trip-header {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.trip-header h3 {
+  margin: 0;
+  color: var(--primary-color);
+}
+
+.trip-status {
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--border-radius);
+}
+
+.status-pending {
+  background-color: #f8f9fa;
+  color: #6c757d;
+}
+
+.status-in_progress {
+  background-color: #e3f2fd;
+  color: #0d6efd;
+}
+
+.status-completed {
+  background-color: #d1e7dd;
+  color: #198754;
+}
+
+.status-cancelled {
+  background-color: #f8d7da;
+  color: #dc3545;
+}
+
+.trip-details {
+  padding: 1rem;
+}
+
+.trip-details p {
+  margin-bottom: 0.5rem;
+}
+
+.trip-actions {
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  border-top: 1px solid #eee;
+}
+
+/* Vehicle Cards */
+.vehicles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.vehicle-card {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+  transition: var(--transition);
+}
+
+.vehicle-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.vehicle-card h3 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.vehicle-card p {
+  margin-bottom: 0.5rem;
+}
+
+.vehicle-status {
+  font-weight: 500;
+}
+
+/* Admin Dashboard */
+.admin-dashboard {
+  padding: 0;
+}
+
+.admin-nav {
+  display: flex;
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.admin-nav a {
+  padding: 1rem 1.5rem;
+  color: var(--dark-color);
+  text-decoration: none;
+  transition: var(--transition);
+  flex: 1;
+  text-align: center;
+  border-bottom: 3px solid transparent;
+}
+
+.admin-nav a:hover {
+  background-color: #f8f9fa;
+}
+
+.admin-nav a.active {
+  background-color: #f8f9fa;
+  border-bottom: 3px solid var(--secondary-color);
+  font-weight: 500;
+}
+
+.admin-content {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+}
+
+.admin-section h2 {
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.section-actions {
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+/* Tables */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+.data-table th,
+.data-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.data-table th {
+  background-color: #f8f9fa;
+  font-weight: 500;
+}
+
+.data-table tr:hover {
+  background-color: #f8f9fa;
+}
+
+.status-badge,
+.role-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--border-radius);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.status-badge.status-available {
+  background-color: #d1e7dd;
+  color: #198754;
+}
+
+.status-badge.status-in_use {
+  background-color: #e3f2fd;
+  color: #0d6efd;
+}
+
+.status-badge.status-maintenance {
+  background-color: #f8d7da;
+  color: #dc3545;
+}
+
+.role-badge.role-admin {
+  background-color: #e3f2fd;
+  color: #0d6efd;
+}
+
+.role-badge.role-driver {
+  background-color: #d1e7dd;
+  color: #198754;
+}
+
+.role-badge.role-employee {
+  background-color: #f8f9fa;
+  color: #6c757d;
+}
+
+.table-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Forms */
+.form-container {
+  background-color: #f8f9fa;
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-container h3 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Reports */
+.filter-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.report-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.report-summary h3,
+.report-by-company h3,
+.report-trips h3 {
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.summary-stats {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 1.5rem;
+  flex: 1;
+  min-width: 150px;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: #6c757d;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .trips-list,
+  .vehicles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-nav {
+    flex-direction: column;
+  }
+
+  .admin-nav a {
+    border-bottom: none;
+    border-left: 3px solid transparent;
+  }
+
+  .admin-nav a.active {
+    border-bottom: none;
+    border-left: 3px solid var(--secondary-color);
+  }
+
+  .data-table {
+    display: block;
+    overflow-x: auto;
+  }
+}
